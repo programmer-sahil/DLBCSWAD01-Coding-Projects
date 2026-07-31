@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A secure vanilla JavaScript contact-list demonstration using JSON data.">
+  <title>ContactFlow | JSON Contact Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="hero">
+    <div class="hero__content">
+      <p class="eyebrow">Vanilla JavaScript • JSON • Accessible Forms</p>
+      <h1>ContactFlow</h1>
+      <p class="hero__subtitle">A lightweight contact-list application for viewing, adding, and removing contacts safely in the browser.</p>
+    </div>
+  </header>
+
+  <main id="main-content" class="page-shell">
+    <section class="dashboard" aria-labelledby="dashboard-title">
+      <div>
+        <p class="section-kicker">Directory overview</p>
+        <h2 id="dashboard-title">Contact Manager</h2>
+      </div>
+      <div class="metric" aria-live="polite">
+        <span id="contact-count" class="metric__value">0</span>
+        <span class="metric__label">contacts</span>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="add-title">
+      <div class="panel__heading">
+        <span class="panel__number" aria-hidden="true">01</span>
+        <div>
+          <h2 id="add-title">Add a new contact</h2>
+          <p>All fields are required. Email addresses are validated before insertion.</p>
+        </div>
+      </div>
+
+      <form id="add-contact-form" class="form-grid" novalidate>
+        <label>
+          <span>Name</span>
+          <input id="name" name="name" type="text" autocomplete="name" maxlength="80" required placeholder="e.g., Aisha Rahman">
+        </label>
+        <label>
+          <span>Email</span>
+          <input id="email" name="email" type="email" autocomplete="email" maxlength="120" required placeholder="aisha@example.com">
+        </label>
+        <label>
+          <span>Phone number</span>
+          <input id="phoneNumber" name="phoneNumber" type="tel" autocomplete="tel" maxlength="25" required placeholder="+91 98765 43210">
+        </label>
+        <button class="button button--primary" type="submit">Add contact</button>
+      </form>
+    </section>
+
+    <section class="panel" aria-labelledby="list-title">
+      <div class="panel__heading panel__heading--spread">
+        <div class="panel__heading-group">
+          <span class="panel__number" aria-hidden="true">02</span>
+          <div>
+            <h2 id="list-title">Contact directory</h2>
+            <p>The table is regenerated from the current JavaScript array after every change.</p>
+          </div>
+        </div>
+        <label class="search-box">
+          <span class="sr-only">Filter contacts</span>
+          <input id="search" type="search" placeholder="Filter contacts" autocomplete="off">
+        </label>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption class="sr-only">Current contact list</caption>
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone number</th>
+            </tr>
+          </thead>
+          <tbody id="contact-table-body"></tbody>
+        </table>
+        <p id="empty-state" class="empty-state" hidden>No contacts match the current filter.</p>
+      </div>
+    </section>
+
+    <section class="panel panel--danger" aria-labelledby="remove-title">
+      <div class="panel__heading">
+        <span class="panel__number" aria-hidden="true">03</span>
+        <div>
+          <h2 id="remove-title">Remove a contact</h2>
+          <p>Enter an exact name. Matching is case-insensitive and removes every contact with that name.</p>
+        </div>
+      </div>
+
+      <form id="remove-contact-form" class="remove-form" novalidate>
+        <label>
+          <span>Contact name</span>
+          <input id="remove-name" name="removeName" type="text" maxlength="80" required placeholder="Name to remove">
+        </label>
+        <button class="button button--danger" type="submit">Remove contact</button>
+      </form>
+    </section>
+
+    <div id="status-message" class="status" role="status" aria-live="polite"></div>
+  </main>
+
+  <footer>
+    <p>ContactFlow academic demonstration • Data is held only in memory and resets when the page reloads.</p>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

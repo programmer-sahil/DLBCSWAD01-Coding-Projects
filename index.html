@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive demonstration of fixed, fluid, adaptive and responsive restaurant layouts.">
+  <title>Amber & Thyme | Layout Demonstration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-layout="responsive">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#home" aria-label="Amber and Thyme home">
+        <span class="brand-mark" aria-hidden="true">A&T</span>
+        <span>
+          <strong>Amber & Thyme</strong>
+          <small>Modern seasonal dining</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span aria-hidden="true">☰</span>
+      </button>
+
+      <nav id="primary-navigation" class="primary-nav" aria-label="Primary navigation">
+        <a href="#menu">Menu</a>
+        <a href="#specials">Specials</a>
+        <a href="#visit">Visit</a>
+        <a class="nav-cta" href="#reserve">Reserve</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="home" class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Locally sourced · Thoughtfully prepared</p>
+        <h1 id="hero-title">A warm table for every season.</h1>
+        <p>Amber & Thyme pairs familiar flavours with modern presentation, using produce from nearby farms and small-batch suppliers.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#menu">Explore the menu</a>
+          <a class="button button-secondary" href="#reserve">Book a table</a>
+        </div>
+        <ul class="hero-facts" aria-label="Restaurant highlights">
+          <li><strong>4.8/5</strong><span>Guest rating</span></li>
+          <li><strong>Tue–Sun</strong><span>Open weekly</span></li>
+          <li><strong>Seasonal</strong><span>Rotating menu</span></li>
+        </ul>
+      </div>
+
+      <div class="hero-visual reveal" aria-label="Stylised seasonal dish presentation">
+        <div class="dish-orbit dish-orbit-one" aria-hidden="true"></div>
+        <div class="dish-orbit dish-orbit-two" aria-hidden="true"></div>
+        <div class="dish-card">
+          <span class="dish-emoji" aria-hidden="true">🍽️</span>
+          <p>Chef's tasting plate</p>
+          <strong>Seasonal · Local · Fresh</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="layout-lab" aria-labelledby="layout-lab-title">
+      <div class="section-shell layout-lab-inner">
+        <div>
+          <p class="eyebrow">Interactive demonstration</p>
+          <h2 id="layout-lab-title">Compare four layout approaches</h2>
+          <p id="layout-description" class="layout-description">Responsive mode combines flexible sizing with content-driven breakpoints.</p>
+        </div>
+        <div class="layout-controls" role="group" aria-label="Choose layout approach">
+          <button type="button" data-layout-choice="fixed">Fixed</button>
+          <button type="button" data-layout-choice="fluid">Fluid</button>
+          <button type="button" data-layout-choice="adaptive">Adaptive</button>
+          <button type="button" data-layout-choice="responsive" class="is-active" aria-pressed="true">Responsive</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="content-section section-shell" aria-labelledby="menu-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Signature menu</p>
+        <h2 id="menu-title">Food designed for sharing</h2>
+        <p>Balanced dishes, clear dietary information and flexible portions make the menu easy to explore on any device.</p>
+      </div>
+
+      <div class="menu-grid">
+        <article class="menu-card reveal">
+          <span class="menu-icon" aria-hidden="true">🥗</span>
+          <div>
+            <p class="menu-kicker">Starter</p>
+            <h3>Roasted beetroot salad</h3>
+            <p>Whipped feta, orange, toasted seeds and herb oil.</p>
+          </div>
+          <strong class="price">₹320</strong>
+        </article>
+
+        <article class="menu-card reveal">
+          <span class="menu-icon" aria-hidden="true">🍝</span>
+          <div>
+            <p class="menu-kicker">Main</p>
+            <h3>Wild mushroom tagliatelle</h3>
+            <p>Brown butter, parmesan, thyme and cracked pepper.</p>
+          </div>
+          <strong class="price">₹540</strong>
+        </article>
+
+        <article class="menu-card reveal">
+          <span class="menu-icon" aria-hidden="true">🍗</span>
+          <div>
+            <p class="menu-kicker">Main</p>
+            <h3>Charred herb chicken</h3>
+            <p>Smoked tomato, seasonal greens and pan jus.</p>
+          </div>
+          <strong class="price">₹620</strong>
+        </article>
+
+        <article class="menu-card reveal">
+          <span class="menu-icon" aria-hidden="true">🍰</span>
+          <div>
+            <p class="menu-kicker">Dessert</p>
+            <h3>Dark chocolate tart</h3>
+            <p>Sea salt, espresso cream and caramelised hazelnuts.</p>
+          </div>
+          <strong class="price">₹280</strong>
+        </article>
+      </div>
+    </section>
+
+    <section id="specials" class="specials-section" aria-labelledby="specials-title">
+      <div class="section-shell specials-grid">
+        <div class="special-copy reveal">
+          <p class="eyebrow">Seasonal special</p>
+          <h2 id="specials-title">The monsoon supper</h2>
+          <p>A three-course evening menu built around warming spices, roasted vegetables and slow-cooked comfort dishes.</p>
+          <ul class="check-list">
+            <li>Three courses with vegetarian options</li>
+            <li>Available Friday and Saturday evenings</li>
+            <li>Advance reservation recommended</li>
+          </ul>
+          <a class="button button-primary" href="#reserve">Reserve the special</a>
+        </div>
+
+        <aside class="special-card reveal" aria-label="Monsoon supper details">
+          <span class="special-badge">This week</span>
+          <p class="special-date">Friday & Saturday</p>
+          <strong>₹1,250 per guest</strong>
+          <p>Includes a welcome cooler and three seasonal courses.</p>
+          <div class="special-divider"></div>
+          <p class="small-copy">Please mention dietary requirements while booking.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="reserve" class="reserve-section section-shell" aria-labelledby="reserve-title">
+      <div class="reserve-panel reveal">
+        <div>
+          <p class="eyebrow">Reservations</p>
+          <h2 id="reserve-title">Plan your next table</h2>
+          <p>Call us or send a reservation request. We confirm every booking personally.</p>
+        </div>
+        <a class="button button-light" href="tel:+913300000000">Call +91 33 0000 0000</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="visit" class="site-footer">
+    <div class="section-shell footer-grid">
+      <div>
+        <strong class="footer-brand">Amber & Thyme</strong>
+        <p>22 Riverside Lane, Kolkata, West Bengal</p>
+      </div>
+      <div>
+        <h2>Opening hours</h2>
+        <p>Tue–Thu: 12:00–22:00<br>Fri–Sun: 12:00–23:00</p>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <p><a href="mailto:hello@amberandthyme.example">hello@amberandthyme.example</a><br><a href="tel:+913300000000">+91 33 0000 0000</a></p>
+      </div>
+    </div>
+    <p class="copyright">© <span id="year"></span> Amber & Thyme. Demonstration project.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

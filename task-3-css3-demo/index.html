@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CSS3 concepts demonstration covering selectors, declarations, comments, margins, borders and responsive testing.">
+  <title>CSS3 Styling Demonstration</title>
+
+  <!-- External CSS: the preferred approach for reusable website styling. -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Internal CSS: useful for a small, page-specific rule. -->
+  <style>
+    .internal-css-note { text-align: center; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="content-shell">
+      <p class="eyebrow">HTML5 + CSS demonstration</p>
+      <h1>CSS3 Styling Laboratory</h1>
+      <p class="intro">This page demonstrates selectors, declarations, external and internal CSS, comments, backgrounds, text alignment, margins, padding and borders.</p>
+    </div>
+  </header>
+
+  <main id="main-content" class="content-shell">
+    <section class="concept-grid" aria-labelledby="concepts-title">
+      <div>
+        <p class="section-label">Core syntax</p>
+        <h2 id="concepts-title">Selector + declaration block</h2>
+        <p>A CSS rule selects one or more HTML elements and applies property-value declarations to them.</p>
+      </div>
+
+      <pre class="code-example" aria-label="Example CSS rule"><code>.menu-card {
+  margin: 24px;
+  border: 2px solid #7b4d2a;
+}</code></pre>
+    </section>
+
+    <section aria-labelledby="menu-title">
+      <div class="section-heading">
+        <p class="section-label">Practical styled div</p>
+        <h2 id="menu-title">Seasonal Menu</h2>
+        <p>The reusable <code>.menu-card</code> class styles each <code>&lt;div&gt;</code> consistently.</p>
+      </div>
+
+      <div class="menu-grid">
+        <div class="menu-card">
+          <span class="menu-card__icon" aria-hidden="true">🥗</span>
+          <h3>Garden Starter</h3>
+          <p>Roasted beetroot, citrus, herbs and toasted seeds.</p>
+          <strong>₹320</strong>
+        </div>
+
+        <div class="menu-card">
+          <span class="menu-card__icon" aria-hidden="true">🍝</span>
+          <h3>Herb Pasta</h3>
+          <p>Hand-cut pasta with mushroom, thyme and parmesan.</p>
+          <strong>₹540</strong>
+        </div>
+
+        <div class="menu-card">
+          <span class="menu-card__icon" aria-hidden="true">🍰</span>
+          <h3>Chocolate Tart</h3>
+          <p>Dark chocolate, espresso cream and hazelnuts.</p>
+          <strong>₹280</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="box-model-panel" aria-labelledby="box-model-title">
+      <div>
+        <p class="section-label">Box model</p>
+        <h2 id="box-model-title">Margin, border and padding</h2>
+      </div>
+      <div class="box-diagram" role="img" aria-label="Diagram showing margin around a border and padding inside the border">
+        <span class="box-label box-label--margin">Margin</span>
+        <div class="border-box">
+          <span class="box-label">Border</span>
+          <div class="padding-box">
+            <span class="box-label">Padding</span>
+            <div class="content-box">Content</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p class="internal-css-note">This centred sentence is styled by the internal <code>&lt;style&gt;</code> element in the document head.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="content-shell">
+      <p>Test in Chrome, Firefox, Safari and Edge, inspect computed styles in developer tools, and validate the stylesheet with the W3C CSS Validator.</p>
+    </div>
+  </footer>
+</body>
+</html>
